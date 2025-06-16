@@ -23,4 +23,4 @@ jobs:
             echo "✅ El secreto está definido correctamente."
           fi
         env:
-          TOKEN: ${{ secrets.personal_access_token_2 }}
+          TOKEN: ${{ secrets.MI_SECRETO  }}
