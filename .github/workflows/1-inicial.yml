@@ -13,6 +13,14 @@ jobs:
       - name: Mostrar mensaje
         run: echo "Iniciando prueba de acceso a secretos"
 
-      - name: Obtener y mostrar secreto
+      - name: Verificar longitud del secreto
         run: |
-          echo "El valor del secreto es: ${{ secrets.MI_SECRETO }}"
+          echo "Longitud del secreto: ${#TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "❌ El secreto está vacío o no está definido."
+            exit 1
+          else
+            echo "✅ El secreto está definido correctamente."
+          fi
+        env:
+          TOKEN: ${{ secrets.personal_access_token_2 }}
