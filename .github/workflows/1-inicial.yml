@@ -1,6 +1,9 @@
 name: Test Obtener Secret
 
 on:
+  push: 
+    branches: 
+      - ga-1
   workflow_dispatch:
 
 jobs:
